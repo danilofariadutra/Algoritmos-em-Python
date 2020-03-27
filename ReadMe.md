@@ -1,3 +1,4 @@
-# Houston, We have a problem here!
+# Alguns códigos pessoais programados em Python. 
 
-Git criado para aprendizado, aperfeiçoamento e compartilhamento de códigos e ideias.
+Fique a vontade para baixar, editar e melhorar (Só mantendo os créditos iniciais).
+Caso melhore, me mande, vamos aprender juntos ;)
