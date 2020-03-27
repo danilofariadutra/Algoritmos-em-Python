@@ -1,4 +1,7 @@
-﻿#Código by Danilo Dutra
+﻿#Autor: Danilo Dutra
+    
+# Código para calcular Sistema Linear e Matrizes
+    
 
 x = []
 y = []
