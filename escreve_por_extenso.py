@@ -6,7 +6,7 @@ Ex.: Você digita "529" (Sem aspas) e o script retorna: "quinhentos e vinte e no
 numero = '';
 
 while len(numero) < 4:
-    numero = input('Digite um número (Digite um valor acima de 999 ou 0 para sair): ')
+    numero = input('Digite um número (Digite um valor acima de 999 ou 0 para sair): ').lower()
 
     if numero == 's' or len(numero) > 3:
         print('Até mais...')
