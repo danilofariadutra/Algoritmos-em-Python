@@ -137,4 +137,3 @@ while len(numero) < 4:
     #imprime números centenários com decimais e unidades
     if len(numero) == 3 and numero[1] != '0' and numero[1] != '1' and numero[2] != '0':
         print(str(centena(numero[0])) + ' e ' + str(dezena(numero[1])) + ' e ' + str(unidade(numero[2])))
-    
