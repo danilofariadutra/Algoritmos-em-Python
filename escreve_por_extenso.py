@@ -5,14 +5,7 @@ Ex.: Você digita "529" (Sem aspas) e o script retorna: "quinhentos e vinte e no
 '''
 numero = '';
 
-while len(numero) < 4:
-    numero = input('Digite um número (Digite um valor acima de 999 ou 0 para sair): ').lower()
-
-    if numero == 's' or len(numero) > 3:
-        print('Até mais...')
-        break
-
-    def unidade(unidade):
+def unidade(unidade):
         if unidade == '1':
             unidade = 'um'  
         elif unidade == '2':
@@ -34,74 +27,81 @@ while len(numero) < 4:
 
         return unidade
 
-    def dezenaDez(dezenaDez):           
-        if dezenaDez == '1':
-            dezenaDez = 'onze'
-        elif dezenaDez == '2':
-            dezenaDez = 'doze'
-        elif dezenaDez == '3':
-            dezenaDez = 'treze'
-        elif dezenaDez == '4':
-            dezenaDez = 'quatorze'
-        elif dezenaDez == '5':
-            dezenaDez = 'quinze'
-        elif dezenaDez == '6':
-            dezenaDez = 'dezesseis'
-        elif dezenaDez == '7':
-            dezenaDez = 'dezessete'
-        elif dezenaDez == '8':
-            dezenaDez = 'dezoito'
-        elif dezenaDez == '9':
-            dezenaDez = 'dezenove'
-        
-        return dezenaDez
+def dezenaDez(dezenaDez):           
+    if dezenaDez == '1':
+        dezenaDez = 'onze'
+    elif dezenaDez == '2':
+        dezenaDez = 'doze'
+    elif dezenaDez == '3':
+        dezenaDez = 'treze'
+    elif dezenaDez == '4':
+        dezenaDez = 'quatorze'
+    elif dezenaDez == '5':
+        dezenaDez = 'quinze'
+    elif dezenaDez == '6':
+        dezenaDez = 'dezesseis'
+    elif dezenaDez == '7':
+        dezenaDez = 'dezessete'
+    elif dezenaDez == '8':
+        dezenaDez = 'dezoito'
+    elif dezenaDez == '9':
+        dezenaDez = 'dezenove'
+    
+    return dezenaDez
 
-    def dezena(dezena):
-        if dezena == '0':
-            dezena = 'dez'      
-        elif dezena == '2':
-            dezena = 'vinte'        
-        elif dezena == '3':
-            dezena = 'trinta'
-        elif dezena == '4':
-            dezena = 'quarenta'
-        elif dezena == '5':
-            dezena = 'cinquenta'
-        elif dezena == '6':
-            dezena = 'sessenta'
-        elif dezena == '7':
-            dezena = 'setenta'
-        elif dezena == '8':
-            dezena = 'oitenta'
-        elif dezena == '9':
-            dezena = 'noventa'
+def dezena(dezena):
+    if dezena == '0':
+        dezena = 'dez'      
+    elif dezena == '2':
+        dezena = 'vinte'        
+    elif dezena == '3':
+        dezena = 'trinta'
+    elif dezena == '4':
+        dezena = 'quarenta'
+    elif dezena == '5':
+        dezena = 'cinquenta'
+    elif dezena == '6':
+        dezena = 'sessenta'
+    elif dezena == '7':
+        dezena = 'setenta'
+    elif dezena == '8':
+        dezena = 'oitenta'
+    elif dezena == '9':
+        dezena = 'noventa'
 
-        return dezena
+    return dezena
 
-    def centena(centena):   
-        if centena == '0':
-            centena = 'cem' 
-        elif centena == '1':
-            centena = 'cento'
-        elif centena == '2':
-            centena = 'duzentos'
-        elif centena == '3':
-            centena = 'trezentos'
-        elif centena == '4':
-            centena = 'quatrocentos'
-        elif centena == '5':
-            centena = 'quinhentos'
-        elif centena == '6':
-            centena = 'seicentos'
-        elif centena == '7':
-            centena = 'setecentos'
-        elif centena == '8':
-            centena = 'oitocentos'
-        elif centena == '9':
-            centena = 'novecentos'
+def centena(centena):   
+    if centena == '0':
+        centena = 'cem' 
+    elif centena == '1':
+        centena = 'cento'
+    elif centena == '2':
+        centena = 'duzentos'
+    elif centena == '3':
+        centena = 'trezentos'
+    elif centena == '4':
+        centena = 'quatrocentos'
+    elif centena == '5':
+        centena = 'quinhentos'
+    elif centena == '6':
+        centena = 'seicentos'
+    elif centena == '7':
+        centena = 'setecentos'
+    elif centena == '8':
+        centena = 'oitocentos'
+    elif centena == '9':
+        centena = 'novecentos'
 
-        return centena
+    return centena
 
+while len(numero) < 4:
+    numero = input('Digite um número (Digite um valor acima de 999 ou 0 para sair): ').lower()
+
+    if numero == 's' or len(numero) > 3:
+        print('Até mais...')
+        break
+    
     # imprime valor de 1 a 9
     if len(numero) == 1:
         print(str(unidade(numero[0])))
@@ -134,6 +134,6 @@ while len(numero) < 4:
     # imprime números valores de 120 ou mais, com final 0
     if len(numero) == 3 and numero[1] != '0' and numero[1] != '1' and numero[2] == '0':
         print(str(centena(numero[0]) + ' e ' + str(dezena(numero[1]))))
-    #imprime números centenários com decimais e unidades
+    # imprime números centenários com decimais e unidades
     if len(numero) == 3 and numero[1] != '0' and numero[1] != '1' and numero[2] != '0':
         print(str(centena(numero[0])) + ' e ' + str(dezena(numero[1])) + ' e ' + str(unidade(numero[2])))
