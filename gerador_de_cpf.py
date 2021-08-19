@@ -19,7 +19,7 @@ Validador de CPF: https://www.4devs.com.br/validador_cpf
 
 from random import randint as rd
 
-def gera_digito():
+def gera_cpf():
     
     estado = int(input('Qual a origem do Estado do CPF Gerado?\n[0] Rio Grande do Sul\n[1] Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins\n[2] Amazonas, Pará, Roraima, Amapá, Acre e Rondônia\n[3] Ceará, Maranhão e Piauí\n[4] Paraíba, Pernambuco, Alagoas e Rio Grande do Norte\n[5] Bahia e Sergipe\n[6] Minas Gerais\n[7] Rio de Janeiro e Espírito Santo\n[8] São Paulo\n[9] Paraná e Santa Catarina\n[Qualquer outro valor para sair]: '))
     
@@ -63,4 +63,4 @@ def gera_digito():
             print('-', end='')
         print(numero, end='')
     
-gera_digito()
+gera_cpf()
