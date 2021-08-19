@@ -1,20 +1,20 @@
 '''
-Informações sobre o CPF:
+    Informações sobre o CPF:
 
-O antepenúltimo dígito (o que está representado pelo “X” em 000.000.00X-00) indica o estado de origem.
+    O antepenúltimo dígito (o que está representado pelo “X” em 000.000.00X-00) indica o estado de origem.
 
-0. Rio Grande do Sul
-1. Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins
-2. Amazonas, Pará, Roraima, Amapá, Acre e Rondônia
-3. Ceará, Maranhão e Piauí
-4. Paraíba, Pernambuco, Alagoas e Rio Grande do Norte
-5. Bahia e Sergipe
-6. Minas Gerais
-7. Rio de Janeiro e Espírito Santo
-8. São Paulo
-9. Paraná e Santa Catarina
+    0. Rio Grande do Sul
+    1. Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins
+    2. Amazonas, Pará, Roraima, Amapá, Acre e Rondônia
+    3. Ceará, Maranhão e Piauí
+    4. Paraíba, Pernambuco, Alagoas e Rio Grande do Norte
+    5. Bahia e Sergipe
+    6. Minas Gerais
+    7. Rio de Janeiro e Espírito Santo
+    8. São Paulo
+    9. Paraná e Santa Catarina
 
-Validador de CPF: https://www.4devs.com.br/validador_cpf
+    Validador de CPF: https://www.4devs.com.br/validador_cpf
 '''
 
 from random import randint as rd
