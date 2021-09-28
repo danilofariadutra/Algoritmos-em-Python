@@ -2,4 +2,4 @@
 
 Biblioteca utilizada: [Turtle](https://docs.python.org/3/library/turtle.html)
 
-![Come on, IT'S TURTLE RACE!](thumb.png)
+![Turtle Race](Turtle-Racing.gif)
