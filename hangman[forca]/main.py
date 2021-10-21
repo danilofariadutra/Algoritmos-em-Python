@@ -89,7 +89,7 @@ def game():
                 print(f'Parabéns! Você venceu! A palavra era: {rd_word}')
                 play_again()
         else:
-            print(f'{guess} caractere inválido. Digite somente letras')
+            print(f'{guess} Caractere inválido. Digite somente letras')
 
 
 game()
