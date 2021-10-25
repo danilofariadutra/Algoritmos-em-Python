@@ -3,38 +3,41 @@ import requests
 from random import randint as rd
 from hangman import *
 
-word_list = requests.get(
-    'https://www.palabrasaleatorias.com/palavras-aleatorias.php?fs=10')
 
-word_list = BeautifulSoup(word_list.content, 'html.parser')
-word_list.prettify()
+def get_word():
+    global rd_word, guess_list, wrong_letters
+    # Cria lista para guardar os chutes errados
+    wrong_letters = list()
+    # Cria a lista para guardar os chutes corretos
+    guess_list = list()
+    word_list = requests.get(
+        'https://www.palabrasaleatorias.com/palavras-aleatorias.php?fs=10')
 
-words = list()
-count = 0
-# Pega todos as 10 palavras contidas na tag DIV dentro da tabela TD, formata, e as coloca em uma lista
-for word in word_list.find_all(
-        'div', attrs={'style': 'font-size:3em; color:#6200C5;'}):
-    words.append(str(word))
-    if '<' in words[count]:
-        words[count] = str(words[count][words[count].index('>') + 1:])
+    word_list = BeautifulSoup(word_list.content, 'html.parser')
+    word_list.prettify()
+
+    words = list()
+    count = 0
+    # Pega todos as 10 palavras contidas na tag DIV dentro da tabela TD, formata, e as coloca em uma lista
+    for word in word_list.find_all(
+            'div', attrs={'style': 'font-size:3em; color:#6200C5;'}):
+        words.append(str(word))
         if '<' in words[count]:
-            words[count] = str(words[count][:words[count].index('<')])
-            if '\r\n' in words[count]:
-                words[count] = str(words[count][words[count].index('\n') + 1:])
-    count += 1
+            words[count] = str(words[count][words[count].index('>') + 1:])
+            if '<' in words[count]:
+                words[count] = str(words[count][:words[count].index('<')])
+                if '\r\n' in words[count]:
+                    words[count] = str(
+                        words[count][words[count].index('\n') + 1:])
+        count += 1
 
-# Sorteia uma das 10 palavras buscadas no site
-rd_word = words[rd(0, 9)]
-# Formata para letra minúscula
-rd_word = rd_word.lower()
+    # Sorteia uma das 10 palavras buscadas no site
+    rd_word = words[rd(0, 9)]
+    # Formata para letra minúscula
+    rd_word = rd_word.lower()
 
-# Cria a lista para guardar os chutes corretos
-guess_list = list()
-for blank in range(len(rd_word)):
-    guess_list.append('_')
-
-# Cria lista para guardar os chutes errados
-wrong_letters = list()
+    for blank in range(len(rd_word)):
+        guess_list.append('_')
 
 
 def play_again():
@@ -52,6 +55,7 @@ def play_again():
 
 
 def game():
+    get_word()
     error = 0
     print(f'A palavra secreta contém {len(rd_word)} letras. Boa sorte!')
     while True:
@@ -93,3 +97,4 @@ def game():
 
 
 game()
+# TODO: Limpar variaveis
