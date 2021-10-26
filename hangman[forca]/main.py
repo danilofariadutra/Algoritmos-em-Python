@@ -97,4 +97,3 @@ def game():
 
 
 game()
-# TODO: Limpar variaveis
